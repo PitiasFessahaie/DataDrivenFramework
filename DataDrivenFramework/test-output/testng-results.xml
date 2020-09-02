@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="4" ignored="1" total="6" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="65360" started-at="2020-08-31T22:12:11 EDT" finished-at="2020-08-31T22:13:16 EDT">
+  <suite name="Default suite" duration-ms="69571" started-at="2020-09-02T00:02:53 EDT" finished-at="2020-09-02T00:04:02 EDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="65360" started-at="2020-08-31T22:12:11 EDT" finished-at="2020-08-31T22:13:16 EDT">
+    <test name="Default test" duration-ms="69571" started-at="2020-09-02T00:02:53 EDT" finished-at="2020-09-02T00:04:02 EDT">
       <class name="automationScripts.Script">
-        <test-method status="PASS" signature="startup()[pri:0, instance:automationScripts.Script@7a765367]" name="startup" is-config="true" duration-ms="111" started-at="2020-08-31T22:12:11 EDT" finished-at="2020-08-31T22:12:11 EDT">
+        <test-method status="PASS" signature="startup()[pri:0, instance:automationScripts.Script@7a765367]" name="startup" is-config="true" duration-ms="140" started-at="2020-09-02T00:02:53 EDT" finished-at="2020-09-02T00:02:53 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startup -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="1273" started-at="2020-08-31T22:12:11 EDT" finished-at="2020-08-31T22:12:12 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="7354" started-at="2020-09-02T00:02:53 EDT" finished-at="2020-09-02T00:03:01 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="5266" started-at="2020-08-31T22:12:12 EDT" data-provider="pass" finished-at="2020-08-31T22:12:18 EDT">
+        <test-method status="PASS" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="5852" started-at="2020-09-02T00:03:01 EDT" data-provider="pass" finished-at="2020-09-02T00:03:06 EDT">
           <params>
             <param index="0">
               <value>
@@ -31,7 +31,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataExcel -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5130" started-at="2020-08-31T22:12:18 EDT" finished-at="2020-08-31T22:12:23 EDT">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5130" started-at="2020-09-02T00:03:06 EDT" finished-at="2020-09-02T00:03:12 EDT">
           <params>
             <param index="0">
               <value>
@@ -42,11 +42,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="880" started-at="2020-08-31T22:12:23 EDT" finished-at="2020-08-31T22:12:24 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="916" started-at="2020-09-02T00:03:12 EDT" finished-at="2020-09-02T00:03:12 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="7653" started-at="2020-08-31T22:12:24 EDT" data-provider="pass" finished-at="2020-08-31T22:12:31 EDT">
+        <test-method status="FAIL" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="6015" started-at="2020-09-02T00:03:12 EDT" data-provider="pass" finished-at="2020-09-02T00:03:18 EDT">
           <params>
             <param index="0">
               <value>
@@ -63,18 +63,18 @@
             <message>
               <![CDATA[Expected condition failed: waiting for title to be "Dashboard ‹ Wordpress Demo Site at Demo.Center — WordPress". Current title: "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress" (tried for 4 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:277c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
+System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:5558%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.135, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:50390}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: beb529c02def48e6bfeb11e63a26804b]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:51300}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: e2fc9820c123966c0fa39e0d161859b5]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be "Dashboard ‹ Wordpress Demo Site at Demo.Center — WordPress". Current title: "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress" (tried for 4 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:277c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
+System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:5558%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.135, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:50390}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: beb529c02def48e6bfeb11e63a26804b
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:51300}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: e2fc9820c123966c0fa39e0d161859b5
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at pages.LoginPage.login(LoginPage.java:37)
@@ -113,7 +113,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataExcel -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5666" started-at="2020-08-31T22:12:31 EDT" finished-at="2020-08-31T22:12:37 EDT">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5654" started-at="2020-09-02T00:03:18 EDT" finished-at="2020-09-02T00:03:24 EDT">
           <params>
             <param index="0">
               <value>
@@ -124,11 +124,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="852" started-at="2020-08-31T22:12:37 EDT" finished-at="2020-08-31T22:12:38 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="915" started-at="2020-09-02T00:03:24 EDT" finished-at="2020-09-02T00:03:25 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="5843" started-at="2020-08-31T22:12:38 EDT" data-provider="pass" finished-at="2020-08-31T22:12:44 EDT">
+        <test-method status="FAIL" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="6347" started-at="2020-09-02T00:03:25 EDT" data-provider="pass" finished-at="2020-09-02T00:03:31 EDT">
           <params>
             <param index="0">
               <value>
@@ -145,18 +145,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             <message>
               <![CDATA[Expected condition failed: waiting for title to be "Dashboard ‹ Wordpress Demo Site at Demo.Center — WordPress". Current title: "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress" (tried for 4 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:277c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
+System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:5558%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.135, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:50412}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 9e16d4cc7605dbb46144a9f8ac2bde3e]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:51322}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 9fe6f33a1ccf7387b51f87f18da2ed5e]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be "Dashboard ‹ Wordpress Demo Site at Demo.Center — WordPress". Current title: "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress" (tried for 4 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:277c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
+System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:5558%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.135, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:50412}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 9e16d4cc7605dbb46144a9f8ac2bde3e
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:51322}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 9fe6f33a1ccf7387b51f87f18da2ed5e
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at pages.LoginPage.login(LoginPage.java:37)
@@ -195,7 +195,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataExcel -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5643" started-at="2020-08-31T22:12:44 EDT" finished-at="2020-08-31T22:12:49 EDT">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5650" started-at="2020-09-02T00:03:31 EDT" finished-at="2020-09-02T00:03:37 EDT">
           <params>
             <param index="0">
               <value>
@@ -206,11 +206,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="859" started-at="2020-08-31T22:12:49 EDT" finished-at="2020-08-31T22:12:50 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="915" started-at="2020-09-02T00:03:37 EDT" finished-at="2020-09-02T00:03:38 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="6634" started-at="2020-08-31T22:12:50 EDT" data-provider="pass" finished-at="2020-08-31T22:12:57 EDT">
+        <test-method status="FAIL" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="5848" started-at="2020-09-02T00:03:38 EDT" data-provider="pass" finished-at="2020-09-02T00:03:44 EDT">
           <params>
             <param index="0">
               <value>
@@ -227,18 +227,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             <message>
               <![CDATA[Expected condition failed: waiting for title to be "Dashboard ‹ Wordpress Demo Site at Demo.Center — WordPress". Current title: "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress" (tried for 4 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:277c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
+System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:5558%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.135, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:50434}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: e370cd7acf697e1dd4b60411133e1599]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:51346}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 02db9421c88885cf17f1ed2f88911894]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be "Dashboard ‹ Wordpress Demo Site at Demo.Center — WordPress". Current title: "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress" (tried for 4 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:277c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
+System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:5558%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.135, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:50434}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: e370cd7acf697e1dd4b60411133e1599
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:51346}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 02db9421c88885cf17f1ed2f88911894
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at pages.LoginPage.login(LoginPage.java:37)
@@ -277,7 +277,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataExcel -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5646" started-at="2020-08-31T22:12:57 EDT" finished-at="2020-08-31T22:13:03 EDT">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5648" started-at="2020-09-02T00:03:44 EDT" finished-at="2020-09-02T00:03:49 EDT">
           <params>
             <param index="0">
               <value>
@@ -288,11 +288,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="892" started-at="2020-08-31T22:13:03 EDT" finished-at="2020-08-31T22:13:03 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:automationScripts.Script@7a765367]" name="setup" is-config="true" duration-ms="896" started-at="2020-09-02T00:03:49 EDT" finished-at="2020-09-02T00:03:50 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="6826" started-at="2020-08-31T22:13:03 EDT" data-provider="pass" finished-at="2020-08-31T22:13:10 EDT">
+        <test-method status="FAIL" signature="dataExcel(java.lang.String, java.lang.String)[pri:0, instance:automationScripts.Script@7a765367]" name="dataExcel" duration-ms="5911" started-at="2020-09-02T00:03:50 EDT" data-provider="pass" finished-at="2020-09-02T00:03:56 EDT">
           <params>
             <param index="0">
               <value>
@@ -309,18 +309,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             <message>
               <![CDATA[Expected condition failed: waiting for title to be "Dashboard ‹ Wordpress Demo Site at Demo.Center — WordPress". Current title: "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress" (tried for 4 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:277c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
+System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:5558%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.135, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:50464}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 441eeb6f558edf32f7a81b97d20e82d6]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:51369}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c9e48715655cf7c133c02aca13f3bcdb]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be "Dashboard ‹ Wordpress Demo Site at Demo.Center — WordPress". Current title: "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress" (tried for 4 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:277c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
+System info: host: 'Pitiass-MacBook-Pro.local', ip: '2601:155:8300:38c0:0:0:0:5558%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.135, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:50464}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 441eeb6f558edf32f7a81b97d20e82d6
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /var/folders/31/zfnry1xj5fd...}, goog:chromeOptions: {debuggerAddress: localhost:51369}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c9e48715655cf7c133c02aca13f3bcdb
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at pages.LoginPage.login(LoginPage.java:37)
@@ -359,7 +359,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataExcel -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5629" started-at="2020-08-31T22:13:10 EDT" finished-at="2020-08-31T22:13:16 EDT">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:automationScripts.Script@7a765367]" name="tearDown" is-config="true" duration-ms="5626" started-at="2020-09-02T00:03:56 EDT" finished-at="2020-09-02T00:04:02 EDT">
           <params>
             <param index="0">
               <value>
@@ -370,7 +370,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="afterAllTests()[pri:0, instance:automationScripts.Script@7a765367]" name="afterAllTests" is-config="true" duration-ms="188" started-at="2020-08-31T22:13:16 EDT" finished-at="2020-08-31T22:13:16 EDT">
+        <test-method status="PASS" signature="afterAllTests()[pri:0, instance:automationScripts.Script@7a765367]" name="afterAllTests" is-config="true" duration-ms="216" started-at="2020-09-02T00:04:02 EDT" finished-at="2020-09-02T00:04:02 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterAllTests -->

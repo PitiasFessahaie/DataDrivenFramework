@@ -85,7 +85,7 @@
            <include>*/Script.java</include>>
            </includes>
           <suiteXmlFiles>
-            <suiteXmlFile>/Users/pitiasfessahaie/eclipse-workspace2/DataDrivenFramework/testng.xml</suiteXmlFile>
+            <suiteXmlFile>/Users/pitiasfessahaie/git/DataDrivenFramework/DataDrivenFramework/testng.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
