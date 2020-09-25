@@ -9,7 +9,7 @@
           <include name="startup"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="dataExcel" invocation-numbers="1 2 3 4"/>
+          <include name="dataExcel"/>
         </methods>
       </class> <!-- automationScripts.Script -->
     </classes>

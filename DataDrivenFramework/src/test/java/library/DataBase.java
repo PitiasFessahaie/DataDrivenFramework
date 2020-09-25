@@ -10,8 +10,9 @@ import java.sql.Statement;
 import org.apache.log4j.Logger;
 
 public class DataBase {
+	
 	final static Logger logger = Logger.getLogger(DataBase.class);
-
+	
 	private String dataBaseServerName;
 	private String dataBasePort;
 	private String dataBaseName;
@@ -25,14 +26,14 @@ public class DataBase {
 	private Connection connection = null;
 
 	private void connectToOracleDB() {
-		JavaPropertiesManager property = new JavaPropertiesManager("/Users/pitiasfessahaie/eclipse-workspace2/DataDriverFramework/src/test/resources/config.properties");
+		JavaPropertiesManager property = new JavaPropertiesManager("/Users/pitiasfessahaie/git/DataDrivenFramework/DataDrivenFramework/src/test/resources/config.properties");
 		
-		dataBaseServerName = property.readProperties("dataBaseServerName");
-		dataBasePort = property.readProperties("dataBasePort");
-		dataBaseSID = property.readProperties("dataBaseSID");
-		dataBaseName = property.readProperties("dataBaseName");
-		userName = property.readProperties("userName");
-		userPassword = property.readProperties("userPassword");
+		dataBaseServerName = property.readData("dataBaseServerName");
+		dataBasePort = property.readData("dataBasePort");
+		dataBaseSID = property.readData("dataBaseSID");
+		dataBaseName = property.readData("dataBaseName");
+		userName = property.readData("userName");
+		userPassword = property.readData("userPassword");
 
 		try {
 			connectionURL = "jdbc:oracle:thin:" + dataBaseName + "@//" + dataBaseServerName + ":" + dataBasePort + "/"

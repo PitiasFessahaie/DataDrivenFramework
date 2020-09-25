@@ -17,7 +17,12 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-
+/***
+ * 
+ * @author Pitias Fessahaie
+ * Date: 02/20/2014
+ *
+ */
 public class Base {
 	public static WebDriver driver;
 	public static Library lib;
@@ -67,16 +72,16 @@ public class Base {
 			logger.info("Starting Time : " + startTime);
 			test.log(Status.INFO, startTime);
 
-			eprop.setProperties("SessionTime", startTime);
+			eprop.writeData("SessionTime", startTime);
 			logger.info("Starting Time setting complete...." + startTime);
-			browser = prop.readProperties("browserType");
+			browser = prop.readData("browserType");
 			logger.info("Reading Browser Type = " + browser);
 			test.log(Status.INFO, "Reading Browser Type = " + browser);
 
-			sendEmail = prop.readProperties("email");
+			sendEmail = prop.readData("email");
 			logger.info("EmailSend :" + sendEmail);
 			test.log(Status.INFO, "EmailSend :" + sendEmail);
-			OS = prop.readProperties("OS");
+			OS = prop.readData("OS");
 
 		} catch (Exception e) {
 			logger.error(e.getMessage());

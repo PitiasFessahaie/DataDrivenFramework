@@ -116,6 +116,7 @@ public class Library {
 		try {
 			fileName = screenshotFileName + getCurrentTime() + ".png";
 			filePath = "target/screenshots/";
+			
 			File tempfile = new File(filePath);
 			if (!tempfile.exists()) {
 				tempfile.mkdirs();
@@ -151,7 +152,7 @@ public class Library {
 	public List<String> automaticallyAttachErrorImgToEmail() {
 		List<String> fileNames = new ArrayList<String>();
 		JavaPropertiesManager propertyReader = new JavaPropertiesManager("src/test/resources/SessionTime.properties");
-		String tempTimeStamp = propertyReader.readProperties("SessionTime");
+		String tempTimeStamp = propertyReader.readData("SessionTime");
 		String numberTimeStamp = tempTimeStamp.replaceAll("_", "");
 		long testStartTime = Long.parseLong(numberTimeStamp);		
 		File file = new File("target/screenshots"); // first check if error-screenshot folder has file

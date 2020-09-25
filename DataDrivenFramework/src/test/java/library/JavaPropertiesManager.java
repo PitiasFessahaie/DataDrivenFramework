@@ -24,7 +24,7 @@ final static Logger logger = Logger.getLogger(JavaPropertiesManager.class);
 		prop = new Properties();
 	}
 	
-	public String readProperties(String key) {
+	public String readData(String key) {
 		try {
 			input = new FileInputStream(filePath);
 			prop.load(input);
@@ -42,7 +42,7 @@ final static Logger logger = Logger.getLogger(JavaPropertiesManager.class);
 		return value;
 		
 	}
-	public void setProperties(String key,String value) {
+	public void writeData(String key,String value) {
 	try{  
 		output = new FileOutputStream(filePath);
 		prop.setProperty(key, value);
