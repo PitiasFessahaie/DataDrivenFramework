@@ -8,19 +8,21 @@ import static org.testng.Assert.assertTrue;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
@@ -40,13 +42,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.io.Files;
@@ -58,11 +62,11 @@ public class Library {
 	Logger logger = Logger.getLogger(Library.class);
 	public List<String> errorScreenshots;
 
-	private static WebDriver driver;
+	private WebDriver driver;
 	boolean remote = false;
 
 	public Library(WebDriver _driver) {
-		Library.driver = _driver;
+		this.driver = _driver;
 	}
 
 	public static String removeExtention(String Path) {
@@ -73,55 +77,81 @@ public class Library {
 	public WebDriver startBrowser(String browser) {
 		try {
 
-			// if (browser.toLowerCase().contains("chrome")) {
-
-			switch (browser) {
-			case "firefox":
-				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
-				break;
-			case "chrome":
-				System.out.println("----Chrome----");
-				WebDriverManager.chromedriver().setup();
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--disable-popup-blocking");
-				options.addArguments("start-maximized");
-				options.addArguments("test-type");
-				options.addArguments("allow-running-insecure-content");
-				options.addArguments("disable-extensions");
-				options.addArguments("--ignore-certificate-errors");
-				options.addArguments("test-type=browser");
-				options.addArguments("disable-infobars");
-				driver = new ChromeDriver(options);
-				break;
-
-			case "edge":
-				WebDriverManager.edgedriver().setup();
-				driver = new EdgeDriver();
-				break;
-			case "ie":
-				WebDriverManager.iedriver().setup();
-				driver = new InternetExplorerDriver();
-				break;
-			case "remotechrome":
-				DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
-				capabilities.setPlatform(Platform.ANY);
-				try {
-					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
-				}
-				break;
-			case "remotefirefox":
-				DesiredCapabilities firefoxcapabilities = new DesiredCapabilities().firefox();
-				firefoxcapabilities.setPlatform(Platform.ANY);
-				try {
-					driver = new RemoteWebDriver(new URL("url"), firefoxcapabilities);
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
-				}
-				break;
+			if (browser.toLowerCase().contains("chrome")) {
+				driver = startChrome();
+			} else if (browser.toLowerCase().contains("firefox")) {
+				driver = firefox();
+			} else if (browser.toLowerCase().contains("remoteChome")) {
+				driver = remoteChrome();
+			} else if (browser.toLowerCase().contains("remotefirefox")) {
+				driver = remoteFireFox();
+			} else if (browser.toLowerCase().contains("edge")) {
+				driver = edge();
+			} else if (browser.toLowerCase().contains("cheadless")) {
+				driver = cheadless();
+			} else {
+				driver = startChrome();
 			}
+
+		} catch (Exception e) {
+			logger.error("Error: ", e);
+			assertTrue(false);
+		}
+		return driver;
+	}
+
+	public WebDriver remoteFireFox() {
+		try {
+			new DesiredCapabilities();
+			DesiredCapabilities firefoxcapabilities = DesiredCapabilities.firefox();
+			firefoxcapabilities.setPlatform(Platform.ANY);
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), firefoxcapabilities);
+
+		} catch (Exception e) {
+			logger.error("Error: ", e);
+			assertTrue(false);
+		}
+		return driver;
+	}
+
+	public WebDriver remoteChrome() {
+		try {
+			new DesiredCapabilities();
+			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+			capabilities.setPlatform(Platform.ANY);
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+
+		} catch (Exception e) {
+			logger.error("Error: ", e);
+			assertTrue(false);
+		}
+		return driver;
+	}
+
+	public WebDriver cheadless() {
+		try {
+			logger.info("Starting chrome_headless.....");
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+		    driver = new ChromeDriver(options);
+
+		} catch (Exception e) {
+			logger.error("Error: ", e);
+			assertTrue(false);
+		}
+		return driver;
+	}
+
+	public WebDriver edge() {
+		try {
+			logger.info("Starting edge.....");
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 
 		} catch (Exception e) {
 			logger.error("Error: ", e);
@@ -542,6 +572,52 @@ public class Library {
 			logger.error("Error: ", e);
 			assertTrue(false);
 		}
+	}
+
+	public WebElement fluentWait(WebElement element, By by) {
+
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(15))
+				.pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
+
+		element = wait.until(new Function<WebDriver, WebElement>() {
+
+			public WebElement apply(WebDriver driver) {
+				return driver.findElement(by);
+			}
+		});
+		return element;
+
+	}
+
+	public void customWait(double inSecs) {
+		try {
+			Thread.sleep((long) (inSecs * 1000));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void dragandDrop(WebElement source, WebElement dest) {
+		Actions action = new Actions(driver);
+		action.clickAndHold(source).moveToElement(dest).release(source).build().perform();
+		customWait(2);
+	}
+
+	public boolean isFileDownloaded(String downloadPath, String fileName) {
+		File dir = new File(downloadPath);
+		if (dir != null) {
+			File[] dirContents = dir.listFiles();
+
+			for (int i = 0; i < dirContents.length; i++) {
+				if (dirContents[i].getName().equals(fileName)) {
+					// File has been found, it can now be deleted:
+					dirContents[i].delete();
+					return true;
+				}
+			}
+
+		}
+		return false;
 	}
 
 	public void fileUpload(By by, String fileRelativePath) {
