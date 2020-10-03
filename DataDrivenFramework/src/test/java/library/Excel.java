@@ -29,6 +29,7 @@ package library;
 				try {
 					File excelDataFile = new File(excelFile);
 					filePath = excelDataFile.getAbsolutePath();
+					logger.info("Reading file -----> "+filePath);
 					FileInputStream fs = new FileInputStream(excelDataFile);
 					wb = getWorkbook(fs, filePath);
 					sh = wb.getSheet(sheetName);
@@ -41,6 +42,7 @@ package library;
 				try {
 					File excelDataFile = new File(excelFile);
 					filePath = excelDataFile.getAbsolutePath();
+					logger.info("Reading file -----> "+filePath);
 					FileInputStream fs = new FileInputStream(excelDataFile);
 					wb = getWorkbook(fs, filePath);
 					sh = wb.getSheetAt(sheetIndex);
@@ -55,7 +57,8 @@ package library;
 				Row row = sh.getRow(rowIndex);
 				Cell cell = row.getCell(colIndex);
 				cellData = formatDataCellToString(cell);
-				logger.info("Reading data cell at Row:" + rowIndex + ", column:" + colIndex + ", data: " + cellData);
+				logger.info("Reading data .........");
+				logger.info("Row: " + rowIndex + ", column:" + colIndex + ", Data: " + cellData);
 			} catch (Exception e) {
 				logger.error("Error: ", e);
 			}
@@ -81,7 +84,7 @@ package library;
 							Cell cell = cellIterator.next();
 							// need to format the cells before read it as a string
 							String data = formatDataCellToString(cell);
-							arrayExcelData[iRowCount - 1][iColCount] = data;
+							arrayExcelData[iRowCount - 1][iColCount] = data;		
 							logger.info("Row:" + iRowCount + ", Col:" + iColCount + ", Data: " + data);
 							iColCount++;
 						}
