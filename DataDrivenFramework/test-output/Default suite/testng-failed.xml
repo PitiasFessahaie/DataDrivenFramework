@@ -8,8 +8,8 @@
           <include name="afterAllTests"/>
           <include name="startup"/>
           <include name="tearDown"/>
+          <include name="dataBase" invocation-numbers="0 2 3 4"/>
           <include name="setup"/>
-          <include name="dataExcel" invocation-numbers="1 2 3 4"/>
         </methods>
       </class> <!-- automationScripts.Script -->
     </classes>

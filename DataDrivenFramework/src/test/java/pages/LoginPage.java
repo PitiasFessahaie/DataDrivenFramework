@@ -1,8 +1,5 @@
 package pages;
 
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -58,31 +55,12 @@ public class LoginPage extends Base {
 	@DataProvider(name = "dbase") // reading data from data base
 	public String[][] credit() {
 
-		int col = 0;
-		int row = 0;
-		String data[][] = null;
-		DataBase db = new DataBase();
+		String[][] data = null;
 		try {
-
-			ResultSet rs = db.runSQLQuery("select * from password");
-			ResultSetMetaData rsmd = rs.getMetaData();
-			col = rsmd.getColumnCount();
-
-			while (rs.next())
-				row++;
-
-			data = new String[row][col];
-
-			rs.beforeFirst();
-
-			for (int i = 0; i < row; i++) {
-				rs.next();
-				for (int j = 1; j <= col; j++) {
-					data[i][j - 1] = rs.getString(j);
-					logger.info(data[i][j - 1]);
-					test.log(Status.DEBUG, data[i][j - 1]);
-				}
-			}
+			
+			DataBase db = new DataBase("select * from password");
+			logger.info("Reading data .........");
+			data = db.readSQLQuery();
 
 		} catch (Exception e) {
 			logger.error("Error :" + e.getMessage());
