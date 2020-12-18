@@ -46,7 +46,7 @@ final static Logger logger = Logger.getLogger(JavaPropertiesManager.class);
 	try{  
 		output = new FileOutputStream(filePath);
 		prop.setProperty(key, value);
-		prop.store(output, "the browser is set to "+value);
+		prop.store(output, "The "+key+" is set to "+value);
 		
 	} catch (Exception e) {
 		logger.info(e.getMessage());

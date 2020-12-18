@@ -11,7 +11,8 @@ import java.sql.Statement;
 import org.apache.log4j.Logger;
 
 public class DataBase {
-
+	
+//This is a data base reader script
 	final static Logger logger = Logger.getLogger(DataBase.class);
 
 	private String dataBaseServerName;
@@ -30,7 +31,7 @@ public class DataBase {
 	public DataBase(String sqlQuery) {
 		this.sqlQuery = sqlQuery;
 	}
-
+    
 	private void connectToOracleDB() {
 		JavaPropertiesManager property = new JavaPropertiesManager(
 				"/Users/pitiasfessahaie/git/DataDrivenFramework/DataDrivenFramework/src/test/resources/config.properties");

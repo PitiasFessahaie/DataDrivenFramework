@@ -23,10 +23,12 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
  * Date: 02/20/2014
  *
  */
+
 public class Base {
 	public static WebDriver driver;
 	public static Library lib;
-	public String browser = "Chrome";
+	public String browser = "";
+	public String headless = "";
 	public String OS = "Mac iOS";
 	public String sendEmail;
 	public String startTime;
@@ -75,6 +77,10 @@ public class Base {
 			eprop.writeData("SessionTime", startTime);
 			logger.info("Starting Time setting complete...." + startTime);
 			browser = prop.readData("browserType");
+			headless = prop.readData("Headless");
+			if(headless.toLowerCase().contains("on")) {
+				lib.setHeadless(true);
+			}
 			logger.info("Reading Browser Type = " + browser);
 			test.log(Status.INFO, "Reading Browser Type = " + browser);
 

@@ -10,14 +10,14 @@ import pages.LoginPage;
 
 public class Script extends Base {
 
-	@Test(dataProvider = "pass", dataProviderClass = LoginPage.class, enabled=false)
+	@Test(dataProvider = "pass", dataProviderClass = LoginPage.class, enabled=true)
 	public void dataExcel(String username, String password) {
 		LoginPage log = new LoginPage();
 		log.login(username, password);     //set the Credentials
 
 	}
 
-	@Test(dataProvider = "dbase", dataProviderClass = LoginPage.class , enabled=true)
+	@Test(dataProvider = "dbase", dataProviderClass = LoginPage.class , enabled=false)
 	public void dataBase(String username, String password) {
 		LoginPage log = new LoginPage();
 		log.login(username, password);

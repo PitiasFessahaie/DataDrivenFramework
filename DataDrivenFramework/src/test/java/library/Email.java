@@ -43,7 +43,7 @@ Logger logger = Logger.getLogger(Email.class);
 		String emailBody = " <br> Good Morning BOSS!!! <br>Test Email by JavaMail API Test Report for the Web Automation." 
 		+ "<br><br> Kind Regards, <br>Test Automation Team<br><br>Pitias Fessahaie<br>";
 
-		sendEmail("smtp.gmail.com", "587", "pitias4work@gmail.com", "#Double07*", 
+		sendEmail("smtp.gmail.com", "587", "pitias4work@gmail.com", "csbwyhalezzewexk", 
 		    "Check the Test Result !!",	emailBody, attachments);
 		}
 

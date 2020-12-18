@@ -42,6 +42,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.LocalFileDetector;
@@ -58,15 +59,20 @@ import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Library {
+	String Hub = "http://172.31.13.184:4444/wd/hub";
 	boolean isDemo = false;
 	Logger logger = Logger.getLogger(Library.class);
 	public List<String> errorScreenshots;
 
 	private WebDriver driver;
 	boolean remote = false;
-
+	boolean Headless = false;
 	public Library(WebDriver _driver) {
 		this.driver = _driver;
+	}
+	
+	public void setHeadless(boolean headless) {
+		this.Headless = headless;
 	}
 
 	public static String removeExtention(String Path) {
@@ -81,10 +87,10 @@ public class Library {
 				driver = startChrome();
 			} else if (browser.toLowerCase().contains("firefox")) {
 				driver = firefox();
-			} else if (browser.toLowerCase().contains("remoteChome")) {
-				driver = remoteChrome();
+			} else if (browser.toLowerCase().contains("remoteChrome")) {
+				driver = remoteChrome(Hub);
 			} else if (browser.toLowerCase().contains("remotefirefox")) {
-				driver = remoteFireFox();
+				driver = remoteFireFox(Hub);
 			} else if (browser.toLowerCase().contains("edge")) {
 				driver = edge();
 			} else if (browser.toLowerCase().contains("cheadless")) {
@@ -100,13 +106,18 @@ public class Library {
 		return driver;
 	}
 
-	public WebDriver remoteFireFox() {
+	public WebDriver remoteFireFox(String Hub) {
 		try {
+			logger.info("Starting Remote FireFox.....");
 			new DesiredCapabilities();
 			DesiredCapabilities firefoxcapabilities = DesiredCapabilities.firefox();
+			firefoxcapabilities.setBrowserName("firefox");
 			firefoxcapabilities.setPlatform(Platform.ANY);
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), firefoxcapabilities);
-
+			driver = new RemoteWebDriver(new URL(Hub), firefoxcapabilities);
+			driver.manage().deleteAllCookies();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		} catch (Exception e) {
 			logger.error("Error: ", e);
 			assertTrue(false);
@@ -114,13 +125,18 @@ public class Library {
 		return driver;
 	}
 
-	public WebDriver remoteChrome() {
+	public WebDriver remoteChrome(String Hub) {
 		try {
+			logger.info("Starting Remote Chrome.....");
 			new DesiredCapabilities();
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setPlatform(Platform.ANY);
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
-
+			driver = new RemoteWebDriver(new URL(Hub), capabilities);
+			driver.manage().deleteAllCookies();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+			
 		} catch (Exception e) {
 			logger.error("Error: ", e);
 			assertTrue(false);
@@ -164,7 +180,12 @@ public class Library {
 		try {
 			logger.info("Start Firefox .....");
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxOptions foxOps = new FirefoxOptions();
+			if(Headless) {
+				foxOps.setHeadless(true);
+			}
+			
+			driver = new FirefoxDriver(foxOps);
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -182,7 +203,11 @@ public class Library {
 			logger.info("Starting Chrome.....");
 
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions chromeOps = new ChromeOptions();
+			if(Headless) {
+				chromeOps.setHeadless(true);
+			}
+			driver = new ChromeDriver(chromeOps);
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -628,7 +653,7 @@ public class Library {
 			String fullPath = tempFile.getAbsolutePath();
 			logger.info("file uploading : " + fullPath);
 
-			if (remote == true) {
+			if (remote) {
 				((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
 			}
 			fileUploadElem.sendKeys(fullPath);
